@@ -7,7 +7,7 @@ class DogList extends Component {
   
   
   render() {
-   let fetchDog = apiResponse.map((dogObj) => <DogCard dogImage={dogObj.img} dogName={dogObj.name}/> ) 
+   let fetchDog = apiResponse.map((dogObj) => <DogCard key = {dogObj.id} dogImage={dogObj.img} dogName={dogObj.name}/> ) 
 
     // console.log(apiResponse)
     return <div className="dogContainer">

@@ -1,9 +1,16 @@
 import React, { Component } from "react";
+import {apiResponse} from '../api.js'
+import DogCard from '../Components/DogCard'
 
-class DogList extends Component {
+class DogsList extends Component {
+
+  
   render() {
-    return <div className="dogContainer">{/*list of dogs go here*/}</div>;
+    let dogInfo = apiResponse.map(dogObj => <DogCard dog={dogObj}/>)
+    return (<div className="dogContainer">
+        {dogInfo}
+      </div>)
   }
 }
 
-export default DogList;
+export default DogsList;

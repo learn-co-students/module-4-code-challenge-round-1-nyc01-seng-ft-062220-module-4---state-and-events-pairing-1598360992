@@ -4,7 +4,7 @@ import DogCard from "../Components/DogCard";
 class DogList extends Component {
   
   genDog = () => {
-    return this.props.values.map(dog => <DogCard value={dog} />)
+    return this.props.values.map(dog => <DogCard key={dog.id} value={dog} />)
   }
 
 

@@ -24,7 +24,7 @@ class DogCard extends React.Component {
         <h2 >{this.props.value.name}</h2>
         <img alt={this.props.value.name} src={this.props.value.img} />
         <button onClick={this.handleClick} className="bark">Bark</button>
-        <h2>{this.state.toggled ? " " : "RUFF"}</h2>
+        {this.state.toggled ? <h2>RUFF</h2> : null}
       </div>
     )
   }

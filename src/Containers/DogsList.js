@@ -5,19 +5,13 @@ import {apiResponse} from '../api.js'
 class DogList extends Component {
 
   createDogCards = () => {
-    const dogArray = []
-    for (const dog of apiResponse) {
-      dogArray.push(
-        <DogCard 
-          key = {dog.id}
-          name= {dog.name}
-          image = {dog.img} 
-          breed = {dog.breed}
-        />
-      )
-    }
-    return dogArray
-  } 
+    return (apiResponse.map((dog) => <DogCard 
+        key = {dog.id}
+        name= {dog.name}
+        image = {dog.img} 
+        breed = {dog.breed}
+      />))
+  }
 
   render() {
     return <div className="dogContainer">{this.createDogCards()}</div>;

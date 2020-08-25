@@ -6,16 +6,18 @@ class DogCard extends React.Component {
   state = {
         hasBeenClicked: false
   }
+
+  something = () => {
+    console.log("something")
+  }
   
  
   clickHandler = () => {
-    
-    this.setState({ hasBeenClicked: !this.state.hasBeenClicked}, () => console.log(this.state.hasBeenClicked))
-    
-    
+    this.setState({ hasBeenClicked: !this.state.hasBeenClicked })
   }
 
   render() {
+      console.log("render state", this.state.hasBeenClicked)
       return ( 
         <div>
           <h2>{this.props.dog.name}</h2>

@@ -1,3 +1,8 @@
+
+# CONTAINER COMPONENTS
+Container is a type of component responsible for other components inside of it. 
+
+
 # react-stateevents-practice1
 
 You have a fake api response that is being exported from `api.js`. The response is an array of multiple `dog` objects that look like this:

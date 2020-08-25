@@ -1,26 +1,31 @@
 import React from "react";
-import {apiResponse} from '../api';
 
 class DogCard extends React.Component {
-  construct(props)
+ 
+ 
+  state = {
+        hasBeenClicked: false
+  }
   
+ 
   clickHandler = () => {
-    console.log("clickyyy")
+    console.log(this.state.hasBeenClicked)
+    this.setState({ hasBeenClicked: true}, () => console.log(this.state.hasBeenClicked))
   }
 
   render() {
-    return apiResponse.map(dog => {
+    console.log("Hitting Render")
+
       return ( 
         <div>
-          <h2>{dog.name}</h2>
-          <img alt={dog.name} src={dog.img} />
+          <h2>{this.props.dogObj.name}</h2>
+          <img alt={this.props.dogObj.name} src={this.props.dogObj.img} />
           <button 
           className="bark"
           onClick={this.clickHandler}
           >Bark</button>
         </div>
       )
-    })
   }
 }
 

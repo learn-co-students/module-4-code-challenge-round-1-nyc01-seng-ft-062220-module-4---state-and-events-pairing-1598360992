@@ -1,6 +1,5 @@
 import React from "react";
 
-
 class DogCard extends React.Component {
 
   state = {
@@ -8,25 +7,21 @@ class DogCard extends React.Component {
   };
 
   handleClick = () => {
-    this.setState(lastState => {
-      return {
-        toggled: !lastState.toggled
-      }
-    })
+    this.props.appClickHandler(this.props.dog)
   }
-
 
   render(){
     let { dog } = this.props
     return (
-      <div>
-        <h2 >{dog.name}</h2>
+      <div className="dogCard">
+        <h4 >Name: {dog.name}</h4>
         <img alt={dog.name} src={dog.img} />
-        <button onClick={this.handleClick} className="bark">Bark</button>
-        {this.state.toggled ? <h2>RUFF</h2> : null}
+        <br></br>
+        <button onClick={this.handleClick}>Favorite</button>
       </div>
     )
   }
+  
 }
 
 export default DogCard;

@@ -1,28 +1,27 @@
 import React from "react";
 
 
-class DogCard extends React.Component {  
-  constructor() {
-    super();
-    this.state = {
-      toggled: false
-    };
-  }
+class DogCard extends React.Component {
+
+  state = {
+    toggled: false
+  };
 
   handleClick = () => {
-    this.setState(previousState => {
+    this.setState(lastState => {
       return {
-        toggled: !previousState.toggled
+        toggled: !lastState.toggled
       }
     })
   }
 
 
   render(){
+    let { dog } = this.props
     return (
       <div>
-        <h2 >{this.props.value.name}</h2>
-        <img alt={this.props.value.name} src={this.props.value.img} />
+        <h2 >{dog.name}</h2>
+        <img alt={dog.name} src={dog.img} />
         <button onClick={this.handleClick} className="bark">Bark</button>
         {this.state.toggled ? <h2>RUFF</h2> : null}
       </div>

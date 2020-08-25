@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import DogCard from "../Components/DogCard";
+import { apiResponse } from '../api'
 
 class DogList extends Component {
   
   genDog = () => {
-    return this.props.values.map(dog => <DogCard key={dog.id} value={dog} />)
+    return apiResponse.map(dogObj => <DogCard key={dogObj.id} dog={dogObj} />)
   }
 
 

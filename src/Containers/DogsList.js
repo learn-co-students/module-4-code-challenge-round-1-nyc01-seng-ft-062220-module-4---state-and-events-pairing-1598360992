@@ -5,7 +5,7 @@ import {apiResponse} from '../api';
 class DogList extends Component {
 
   renderDogCard = () => {
-    return apiResponse.map(dog => <DogCard dogObj={dog}/>)
+    return apiResponse.map(dogObj => <DogCard key={dogObj.id} dog={dogObj}/>)
   }
   
   render() {
